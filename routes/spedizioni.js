@@ -11,9 +11,10 @@ var urlDatiSpedizione = "http://wwww.sda.it/SITO_SDA-WEB/dispatcher?id_ldv=@ldv@
 router.get('/:ldv', function (req, res, next) {
     var lunghezzeAccettate = [7, 9, 12, 13];
     if (lunghezzeAccettate.indexOf(req.params.ldv.length) < 0) {
-        var err = new Error('LDV troppo corta');
+        var err = new Error('lunghezza LDV errata');
         err.status = 503;
         next(err);
+        return;
     }
     rq.get(urlPaginaRicerca.replace("@ldv@", req.params.ldv), function (error, response, body) {
         "use strict";
@@ -107,7 +108,17 @@ function makeJsonFromResponse(body) {
     "use strict";
     var response = {};
     var $ = cheerio.load(body);
+    if(!$('div#track table').length){
+        return {
+            esito: {
+                esito: false,
+                errorCorde: 404,
+                message: 'Spedizione non trovata'
+            }
+        };
+    }
     var esito = {
+        esito: true,
         consegnata: !!$('td.rowheadBis').length
     };
     if (esito.consegnata) {

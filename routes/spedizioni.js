@@ -119,7 +119,7 @@ function makeJsonFromResponse(body) {
     }
     var esito = {
         esito: true,
-        consegnata: !!$('td.rowheadBis').length
+        consegnata: $('td.rowheadBis').parent().parent().find('tr').length > 1
     };
     if (esito.consegnata) {
         var trEsito = $('td.rowheadBis').parent().parent().find('tr:nth-child(3)');

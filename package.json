@@ -1,6 +1,8 @@
 {
   "name": "TrackingSDA-Node",
   "version": "0.0.0",
+  "author": "mariotsi",
+  "description": "Tracking SDA shipment rest API",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"

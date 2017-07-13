@@ -11,7 +11,7 @@ export default class Ldv {
     static allowedLengths = [7, 9, 12, 13]
     constructor(code: string) {
         if (!Ldv.allowedLengths.includes(code.length)) {
-            throw (new HttpError('LDV lenght not allowed', 503));
+            throw (new HttpError('Wrong LDV format', 503));
         }
         this.code = code;
 

@@ -9,7 +9,7 @@ export default class LdvBodyParser {
                 esito: {
                     esito: false,
                     errorCode: 404,
-                    message: 'Spedizione non trovata'
+                    message: 'Shipment not found'
                 }
             };
         }

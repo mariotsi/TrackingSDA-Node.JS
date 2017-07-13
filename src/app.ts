@@ -7,7 +7,7 @@ import * as bodyParser from 'body-parser';
 
 import * as routes from './routes/index';
 import * as users from './routes/users';
-import * as spedizioni from './routes/spedizioni';
+import * as shipments from './routes/shipments';
 import HttpError from './classes/HttpError';
 
 export default class App {
@@ -29,7 +29,7 @@ export default class App {
 
     this.app.use('/', routes);
     this.app.use('/users', users);
-    this.app.use('/spedizioni', spedizioni);
+    this.app.use('/shipments', shipments);
 
    
     // catch 404 and forward to error handler

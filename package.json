@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "start": "npm run build && node ./out/index.js",
-    "build": "npm run copystatic && tsc -p . ",
+    "build": "npm run copystatic && npm run tscompile",
+    "tscompile": "tsc -p . ",
     "copystatic": "copyfiles -u 1 './src/**/*.hbs' './src/**/*.css' out"
   },
   "engines": {

@@ -2,7 +2,7 @@ import Ldv from './Ldv'
 import * as rp from 'request-promise-native';
 import * as cheerio from 'cheerio';
 import HttpError from '../classes/HttpError';
-import LdvBodyParser from '../classes/LdvBodyParser';
+import HistoryParser from '../classes/HistoryParser';
 
 export default class Crawler {
     static urlPaginaRicerca = "http://wwww.sda.it/SITO_SDA-WEB/dispatcher?id_ldv=@ldv@&invoker=home&LEN=&execute2=ActionTracking.doGetTrackingHome&button=Vai";
@@ -19,12 +19,15 @@ export default class Crawler {
             return cheerio.load(body);
         }
     };
+
     constructor(ldv: Ldv) {
         this.ldv = ldv;
     }
+
     setUrl(url: string) {
         this.options.uri = url;
     }
+
     async searchLdv() {
         this.setUrl(Crawler.urlPaginaRicerca.replace("@ldv@", this.ldv.code));
         try {
@@ -36,6 +39,7 @@ export default class Crawler {
             return new HttpError('Errore nella prima request', 500);
         }
     }
+
     async validateSession() {
         this.setUrl(Crawler.urlValidazioneSessione.replace(/@codice_sicurezza@/g, this.codice_sicurezza).replace('@ses_id@', this.ses_id));
         try {
@@ -44,6 +48,7 @@ export default class Crawler {
             return new HttpError('Errore nella seconda request', 500);
         }
     }
+
     async getShipmentDetails() {
         this.setUrl(Crawler.urlDatiSpedizione
             .replace(/@codice_sicurezza@/g, this.codice_sicurezza)
@@ -56,8 +61,9 @@ export default class Crawler {
             return new HttpError('Errore nella terza request', 500);
         }
     }
+
     parse() {
-        const { esito, steps } = LdvBodyParser.parse(this.rawBody);
+        const { esito, steps } = HistoryParser.parse(this.rawBody);
         this.ldv.esito = esito;
         this.ldv.steps = steps;
     }

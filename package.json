@@ -9,7 +9,8 @@
     "build": "npm run copystatic && npm run tscompile",
     "tscompile": "tsc -p . ",
     "copystatic": "copyfiles -u 1 './src/**/*.hbs' './src/**/*.css' out",
-    "lint": "tslint -c tslint.json 'src/**/*.ts' --fix"
+    "lint": "tslint -c tslint.json 'src/**/*.ts' --fix",
+    "precommit": "tslint -c tslint.json 'src/**/*.ts'"
   },
   "engines": {
     "node": "8.x"

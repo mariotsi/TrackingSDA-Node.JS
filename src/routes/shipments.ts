@@ -1,5 +1,4 @@
 import * as express from 'express';
-import * as rp from 'request-promise-native';
 import Ldv from '../classes/Ldv';
 
 const router = express.Router();

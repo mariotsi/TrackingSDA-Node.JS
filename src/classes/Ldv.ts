@@ -1,4 +1,4 @@
-import { ParserResult, Esito, Step } from './Interfaces';
+import { Esito, Step } from './Interfaces';
 import HttpError from '../classes/HttpError';
 import Crawler from '../classes/Crawler';
 

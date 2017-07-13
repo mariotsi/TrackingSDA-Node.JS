@@ -1,11 +1,12 @@
 {
   "name": "TrackingSDA-Node",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "mariotsi",
   "description": "Tracking SDA shipment rest API",
   "private": true,
   "scripts": {
-    "start": "node out/index.js",
+    "start": "npm run build && node ./out/index.js",
+    "build": "npm run copystatic && tsc -p . ",
     "copystatic": "copyfiles -u 1 './src/**/*.hbs' './src/**/*.css' out"
   },
   "engines": {

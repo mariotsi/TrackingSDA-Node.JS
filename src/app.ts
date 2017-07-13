@@ -1,6 +1,6 @@
 import * as express from 'express';
 import * as path from 'path';
-//const favicon = require('serve-favicon');
+//const favicon = require('serve-favicon'); 
 import * as logger from 'morgan';
 import * as cookieParser from 'cookie-parser';
 import * as bodyParser from 'body-parser';

@@ -4,8 +4,7 @@
  * Module dependencies.
  */
 
-
-import App from "./app"
+import app from './app';
 const debug = require('debug')('TrackingSDA-Node:server');
 import * as http from 'http';
 
@@ -14,7 +13,7 @@ import * as http from 'http';
  */
 
 const port = normalizePort(process.env.PORT || '3000');
-const expressApp = new App();
+const expressApp = new app();
 expressApp.app.set('port', port);
 
 /**
@@ -28,6 +27,7 @@ const server = http.createServer(expressApp.app);
  */
 
 server.listen(port, () => {
+  // tslint:disable-next-line:no-console
   console.log('Service started');
 });
 server.on('error', onError);

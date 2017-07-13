@@ -1,6 +1,6 @@
 import * as express from 'express';
 import * as path from 'path';
-//const favicon = require('serve-favicon'); 
+// const favicon = require('serve-favicon'); 
 import * as logger from 'morgan';
 import * as cookieParser from 'cookie-parser';
 import * as bodyParser from 'body-parser';
@@ -11,7 +11,7 @@ import * as shipments from './routes/shipments';
 import HttpError from './classes/HttpError';
 
 export default class App {
-  app: express.Express
+  public app: express.Express;
   constructor() {
     this.app = express();
 
@@ -20,7 +20,7 @@ export default class App {
     this.app.set('view engine', 'hbs');
 
     // uncomment after placing your favicon in /public
-    //this.app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+    // this.app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
     this.app.use(logger('dev'));
     this.app.use(bodyParser.json());
     this.app.use(bodyParser.urlencoded({ extended: false }));
@@ -31,14 +31,12 @@ export default class App {
     this.app.use('/users', users);
     this.app.use('/shipments', shipments);
 
-   
+
     // catch 404 and forward to error handler
     this.app.use((req, res, next) => {
-      const err: HttpError = new HttpError('Not Found') 
-      err.status = 404;
+      const err: HttpError = new HttpError('Not Found', 404);
       next(err);
-    }
-    );
+    });
 
     // error handlers
 
@@ -50,12 +48,11 @@ export default class App {
         res.send({
           esito: {
             esito: false,
-            message: err.message
+            message: err.message,
           },
-          error: err
+          error: err,
         });
-      }
-      );
+      });
     }
 
     // production error handler
@@ -64,8 +61,8 @@ export default class App {
       res.status(err.status || 500).send({
         esito: {
           esito: false,
-          message: err.message
-        }
+          message: err.message,
+        },
       });
     });
   }

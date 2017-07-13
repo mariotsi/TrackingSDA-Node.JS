@@ -8,6 +8,7 @@ import * as bodyParser from 'body-parser';
 import * as routes from './routes/index';
 import * as users from './routes/users';
 import * as spedizioni from './routes/spedizioni';
+import HttpError from './classes/HttpError';
 
 export default class App {
   app: express.Express
@@ -30,12 +31,10 @@ export default class App {
     this.app.use('/users', users);
     this.app.use('/spedizioni', spedizioni);
 
-    interface HttpError extends Error {
-      status: number
-    }
+   
     // catch 404 and forward to error handler
-    this.app.use((req: express.Request, res: express.Response, next: express.NextFunction) => {
-      const err: HttpError = new Error('Not Found') as HttpError
+    this.app.use((req, res, next) => {
+      const err: HttpError = new HttpError('Not Found') 
       err.status = 404;
       next(err);
     }
@@ -61,7 +60,7 @@ export default class App {
 
     // production error handler
     // no stacktraces leaked to user
-    this.app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
+    this.app.use((err: HttpError, req: express.Request, res: express.Response, next: express.NextFunction) => {
       res.status(err.status || 500).send({
         esito: {
           esito: false,

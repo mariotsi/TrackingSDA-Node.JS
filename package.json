@@ -21,6 +21,7 @@
     "moment": "^2.14.1",
     "morgan": "~1.7.0",
     "request": "^2.74.0",
+    "request-promise-native": "^1.0.4",
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
@@ -31,6 +32,7 @@
     "@types/morgan": "^1.7.32",
     "@types/node": "^6.0.81",
     "@types/request": "0.0.46",
+    "@types/request-promise-native": "^1.0.6",
     "copyfiles": "^1.2.0",
     "nodemon": "^1.11.0"
   }

@@ -4,7 +4,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "taskName": "CompileTS",
+            "taskName": "Watch and compile TS",
             "command": "tsc",
             "type": "shell",
             "args": [
@@ -20,11 +20,6 @@
             },
             "isBackground": true,
             "problemMatcher": "$tsc-watch"
-        },
-        {
-            "label": "copystatic",
-            "type": "npm",
-            "script": "copystatic"
         },
         {
             "taskName": "build",

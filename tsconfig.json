@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-     "moduleResolution": "node",
+    "moduleResolution": "node",
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
     "outDir": "./out/",
     "sourceMap": true,
     "allowJs": true,
-    "target": "es5"
+    "target": "ES2017"
   },
   "include": [
     "src/**/*"

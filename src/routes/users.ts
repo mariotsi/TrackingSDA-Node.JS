@@ -1,6 +1,5 @@
-//var express = require('express');
 import * as express from 'express';
-var router = express.Router();
+const router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {

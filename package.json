@@ -25,7 +25,8 @@
     "request": "^2.74.0",
     "request-promise-native": "^1.0.4",
     "copyfiles": "^1.2.0",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "typescript": "^2.4.1"
   },
   "devDependencies": {
     "@types/body-parser": "^1.16.4",
@@ -36,7 +37,6 @@
     "@types/node": "^6.0.81",
     "@types/request": "0.0.46",
     "@types/request-promise-native": "^1.0.6",
-    "nodemon": "^1.11.0",
-    "typescript": "^2.4.1"
+    "nodemon": "^1.11.0"
   }
 }

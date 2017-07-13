@@ -4,4 +4,4 @@ export default class HttpError extends Error {
     super(message);
     this.status = status;
   }
-};
+}

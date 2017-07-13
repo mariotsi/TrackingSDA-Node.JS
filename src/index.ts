@@ -5,22 +5,23 @@
  */
 
 
-import * as app from "./app"
+import App from "./app"
 const debug = require('debug')('TrackingSDA-Node:server');
-const http = require('http');
+import * as http from 'http';
 
 /**
  * Get port from environment and store in Express.
  */
 
 const port = normalizePort(process.env.PORT || '3000');
-app.app.set('port', port);
+const expressApp = new App();
+expressApp.app.set('port', port);
 
 /**
  * Create HTTP server.
  */
 
-const server = http.createServer(app);
+const server = http.createServer(expressApp.app);
 
 /**
  * Listen on provided port, on all network interfaces.

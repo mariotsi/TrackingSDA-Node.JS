@@ -1,12 +1,14 @@
 {
   "compilerOptions": {
-    "module": "system",
+    "module": "commonjs",
+     "moduleResolution": "node",
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
     "outDir": "./dist/",
     "sourceMap": true,
-   "allowJs":true
+    "allowJs": true,
+    "target": "es5"
   },
   "include": [
     "src/**/*"

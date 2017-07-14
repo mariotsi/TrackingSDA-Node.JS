@@ -1,10 +1,9 @@
 const chai = require('chai');
 chai.should();
-chai.use(require('chai-as-promised'));
 const expect = chai.expect;
 const sinon = require('sinon');
-const Ldv = require('../out/classes/Ldv').default;
-const Crawler = require('../out/classes/Crawler').default;
+const Ldv = require('../../out/classes/Ldv').default;
+const Crawler = require('../../out/classes/Crawler').default;
 describe('Ldv class', () => {
   describe('constructor', () => {
     describe('with ldv length 7', () => {

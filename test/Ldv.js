@@ -12,9 +12,9 @@ describe('Ldv class', () => {
         try {
           const ldv = new Ldv('1234567');
           ldv.code.should.equal('1234567');
-          done()
+          done();
         } catch (err) {
-          done(err)
+          done(err);
         }
       });
     });
@@ -23,9 +23,9 @@ describe('Ldv class', () => {
         try {
           const ldv = new Ldv('123456789');
           ldv.code.should.equal('123456789');
-          done()
+          done();
         } catch (err) {
-          done(err)
+          done(err);
         }
       });
     });
@@ -34,9 +34,9 @@ describe('Ldv class', () => {
         try {
           const ldv = new Ldv('123456789ABC');
           ldv.code.should.equal('123456789ABC');
-          done()
+          done();
         } catch (err) {
-          done(err)
+          done(err);
         }
       });
     });
@@ -45,9 +45,9 @@ describe('Ldv class', () => {
         try {
           const ldv = new Ldv('123456789ABCD');
           ldv.code.should.equal('123456789ABCD');
-          done()
+          done();
         } catch (err) {
-          done(err)
+          done(err);
         }
       });
     });

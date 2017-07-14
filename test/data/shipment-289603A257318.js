@@ -1488,5 +1488,9 @@ exports.result = {
     'data': '2016-12-29T23:00:00.000Z',
     'descrizione': 'LA SPEDIZIONE E\' PARTITA',
     'filiale': 'Terni',
-  }, {'data': '2016-12-29T23:00:00.000Z', 'descrizione': 'SPEDIZIONE ACCETTATA PRESSO LA FILIALE', 'filiale': 'Terni'}],
+  }, {
+    'data': '2016-12-29T23:00:00.000Z',
+    'descrizione': 'SPEDIZIONE ACCETTATA PRESSO LA FILIALE',
+    'filiale': 'Terni',
+  }],
 };

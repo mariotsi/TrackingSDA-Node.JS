@@ -1,3 +1,4 @@
+/* eslint-disable max-len,no-useless-escape,no-tabs */
 exports.rawBody = `<!--?xml version="1.0" encoding="UTF-8" ?--><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xml:lang="it" xmlns="http://www.w3.org/1999/xhtml"><head>
 		<title>SDA </title>
 				
@@ -1078,4 +1079,5 @@ function cancellaCookie(name) {
 	</script>
 	
 </body></html>`;
-exports.result = {'esito': {'esito': false, 'errorCode': 404, 'message': 'Shipment not found'}};
+/* eslint-enable max-len,no-useless-escape,no-tabs */
+exports.result = {esito: {esito: false, errorCode: 404, message: 'Shipment not found'}};

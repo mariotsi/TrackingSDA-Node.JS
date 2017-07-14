@@ -1,3 +1,4 @@
+/* eslint-disable max-len,no-useless-escape,no-tabs */
 exports.rawBody = `<!--?xml version="1.0" encoding="UTF-8" ?--><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xml:lang="it" xmlns="http://www.w3.org/1999/xhtml"><head>
   <title>SDA Tracking: Tracking spedizione</title>
 
@@ -46,6 +47,8 @@ function errore(mex_errore)
  document.write("<IMG SRC=\"images/Nav_FV/nvfv_02.JPG\" WIDTH=\"101\" HEIGHT=\"21\" NAME=\"azienda\" ALT=\"Azienda\" BORDER=\"0\"></A></td><td>");
  document.write("<A HREF=\"faq.htm\" TARGET=\"_top\">");
  document.write("<IMG SRC=\"images/Nav_FV/nvfv_03.JPG\" WIDTH=\"102\" HEIGHT=\"21\" NAME=\"faq\" ALT=\"F.A.Q.\" BORDER=\"0\"></A></td></tr></table></TD></TR>");
+// eslint-disable-next-line no-tabs
+// eslint-disable-next-line no-tabs
  document.write("<TR><TD><font face=\"Verdana\"><br><br><br><br><br><br><center><font color=\"#009900\">ATTENZIONE : </font><br><BR>"+mex_errore+"</font></center>");	
  document.write("<br><br><br><br><br><br><br><br><br><HR SIZE=\"1\" ALIGN=\"CENTER\" WIDTH=400 noshade><FONT SIZE=\"1\" FACE=\"Arial,Helvetica,Geneva,Swiss,SunSans-Regular\"><center>&copy; Informatica e Servizi s.r.l. &#149; 1999 &#149;</center></FONT></TD></TR></TABLE></body>");
  }
@@ -1445,52 +1448,64 @@ if (onloadDiv){
 </script>
 
 </body></html>`;
+/* eslint-enable max-len,no-useless-escape,no-tabs */
 exports.result = {
-  'esito': {
-    'esito': true,
-    'consegnata': true,
-    'dataOra': '2017-01-03T16:17:00.000Z',
-    'firma': 'donofrio',
+  esito: {
+    esito: true,
+    consegnata: true,
+    dataOra: '2017-01-03T16:17:00.000Z',
+    firma: 'donofrio',
   },
-  'steps': [{
-    'data': '2017-01-02T23:00:00.000Z',
-    'descrizione': 'LA SPEDIZIONE E\' STATA CONSEGNATA',
-    'filiale': 'Milano 2',
-  }, {
-    'data': '2017-01-02T23:00:00.000Z',
-    'descrizione': 'IN CONSEGNA',
-    'filiale': 'Milano 2',
-  }, {
-    'data': '2017-01-02T23:00:00.000Z',
-    'descrizione': 'IN ATTESA DI CONSEGNA SECONDO I TEMPI PREVISTI',
-    'filiale': 'Milano 2',
-  }, {
-    'data': '2017-01-01T23:00:00.000Z',
-    'descrizione': 'DESTINAT. NON DISPONIBILE PER CHIUSURA SETTIMANALE',
-    'filiale': 'Milano 2',
-  }, {
-    'data': '2017-01-01T23:00:00.000Z',
-    'descrizione': 'IN CONSEGNA',
-    'filiale': 'Milano 2',
-  }, {
-    'data': '2016-12-30T23:00:00.000Z',
-    'descrizione': 'IN ATTESA DI CONSEGNA SECONDO I TEMPI PREVISTI',
-    'filiale': 'Milano 2',
-  }, {
-    'data': '2016-12-30T23:00:00.000Z',
-    'descrizione': 'LA SPEDIZIONE E\' PARTITA',
-    'filiale': 'Hub Espresso Milano',
-  }, {
-    'data': '2016-12-30T23:00:00.000Z',
-    'descrizione': 'IN TRANSITO',
-    'filiale': 'Hub Espresso Milano',
-  }, {
-    'data': '2016-12-29T23:00:00.000Z',
-    'descrizione': 'LA SPEDIZIONE E\' PARTITA',
-    'filiale': 'Terni',
-  }, {
-    'data': '2016-12-29T23:00:00.000Z',
-    'descrizione': 'SPEDIZIONE ACCETTATA PRESSO LA FILIALE',
-    'filiale': 'Terni',
-  }],
+  steps: [
+    {
+      data: '2017-01-02T23:00:00.000Z',
+      descrizione: 'LA SPEDIZIONE E\' STATA CONSEGNATA',
+      filiale: 'Milano 2',
+    },
+    {
+      data: '2017-01-02T23:00:00.000Z',
+      descrizione: 'IN CONSEGNA',
+      filiale: 'Milano 2',
+    },
+    {
+      data: '2017-01-02T23:00:00.000Z',
+      descrizione: 'IN ATTESA DI CONSEGNA SECONDO I TEMPI PREVISTI',
+      filiale: 'Milano 2',
+    },
+    {
+      data: '2017-01-01T23:00:00.000Z',
+      descrizione: 'DESTINAT. NON DISPONIBILE PER CHIUSURA SETTIMANALE',
+      filiale: 'Milano 2',
+    },
+    {
+      data: '2017-01-01T23:00:00.000Z',
+      descrizione: 'IN CONSEGNA',
+      filiale: 'Milano 2',
+    },
+    {
+      data: '2016-12-30T23:00:00.000Z',
+      descrizione: 'IN ATTESA DI CONSEGNA SECONDO I TEMPI PREVISTI',
+      filiale: 'Milano 2',
+    },
+    {
+      data: '2016-12-30T23:00:00.000Z',
+      descrizione: 'LA SPEDIZIONE E\' PARTITA',
+      filiale: 'Hub Espresso Milano',
+    },
+    {
+      data: '2016-12-30T23:00:00.000Z',
+      descrizione: 'IN TRANSITO',
+      filiale: 'Hub Espresso Milano',
+    },
+    {
+      data: '2016-12-29T23:00:00.000Z',
+      descrizione: 'LA SPEDIZIONE E\' PARTITA',
+      filiale: 'Terni',
+    },
+    {
+      data: '2016-12-29T23:00:00.000Z',
+      descrizione: 'SPEDIZIONE ACCETTATA PRESSO LA FILIALE',
+      filiale: 'Terni',
+    },
+  ],
 };

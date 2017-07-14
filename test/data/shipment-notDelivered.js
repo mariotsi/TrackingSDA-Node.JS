@@ -1,3 +1,4 @@
+/* eslint-disable max-len,no-useless-escape,no-tabs */
 exports.rawBody = `<!--?xml version="1.0" encoding="UTF-8" ?--><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xml:lang="it" xmlns="http://www.w3.org/1999/xhtml"><head>
   <title>SDA Tracking: Tracking spedizione</title>
 
@@ -1399,42 +1400,53 @@ if (onloadDiv){
 </script>
 
 </body></html>`;
+/* eslint-enable max-len,no-useless-escape,no-tabs */
 exports.result = {
-  'esito': {
-    'esito': true,
-    'consegnata': false,
+  esito: {
+    esito: true,
+    consegnata: false,
   },
-  'steps': [{
-    'data': '2017-01-02T23:00:00.000Z',
-    'descrizione': 'IN CONSEGNA',
-    'filiale': 'Milano 2',
-  }, {
-    'data': '2017-01-02T23:00:00.000Z',
-    'descrizione': 'IN ATTESA DI CONSEGNA SECONDO I TEMPI PREVISTI',
-    'filiale': 'Milano 2',
-  }, {
-    'data': '2017-01-01T23:00:00.000Z',
-    'descrizione': 'DESTINAT. NON DISPONIBILE PER CHIUSURA SETTIMANALE',
-    'filiale': 'Milano 2',
-  }, {
-    'data': '2017-01-01T23:00:00.000Z',
-    'descrizione': 'IN CONSEGNA',
-    'filiale': 'Milano 2',
-  }, {
-    'data': '2016-12-30T23:00:00.000Z',
-    'descrizione': 'IN ATTESA DI CONSEGNA SECONDO I TEMPI PREVISTI',
-    'filiale': 'Milano 2',
-  }, {
-    'data': '2016-12-30T23:00:00.000Z',
-    'descrizione': 'LA SPEDIZIONE E\' PARTITA',
-    'filiale': 'Hub Espresso Milano',
-  }, {
-    'data': '2016-12-30T23:00:00.000Z',
-    'descrizione': 'IN TRANSITO',
-    'filiale': 'Hub Espresso Milano',
-  }, {
-    'data': '2016-12-29T23:00:00.000Z',
-    'descrizione': 'LA SPEDIZIONE E\' PARTITA',
-    'filiale': 'Terni',
-  }, {'data': '2016-12-29T23:00:00.000Z', 'descrizione': 'SPEDIZIONE ACCETTATA PRESSO LA FILIALE', 'filiale': 'Terni'}],
+  steps: [
+    {
+      data: '2017-01-02T23:00:00.000Z',
+      descrizione: 'IN CONSEGNA',
+      filiale: 'Milano 2',
+    },
+    {
+      data: '2017-01-02T23:00:00.000Z',
+      descrizione: 'IN ATTESA DI CONSEGNA SECONDO I TEMPI PREVISTI',
+      filiale: 'Milano 2',
+    },
+    {
+      data: '2017-01-01T23:00:00.000Z',
+      descrizione: 'DESTINAT. NON DISPONIBILE PER CHIUSURA SETTIMANALE',
+      filiale: 'Milano 2',
+    },
+    {
+      data: '2017-01-01T23:00:00.000Z',
+      descrizione: 'IN CONSEGNA',
+      filiale: 'Milano 2',
+    },
+    {
+      data: '2016-12-30T23:00:00.000Z',
+      descrizione: 'IN ATTESA DI CONSEGNA SECONDO I TEMPI PREVISTI',
+      filiale: 'Milano 2',
+    },
+    {
+      data: '2016-12-30T23:00:00.000Z',
+      descrizione: 'LA SPEDIZIONE E\' PARTITA',
+      filiale: 'Hub Espresso Milano',
+    },
+    {
+      data: '2016-12-30T23:00:00.000Z',
+      descrizione: 'IN TRANSITO',
+      filiale: 'Hub Espresso Milano',
+    },
+    {
+      data: '2016-12-29T23:00:00.000Z',
+      descrizione: 'LA SPEDIZIONE E\' PARTITA',
+      filiale: 'Terni',
+    },
+    {data: '2016-12-29T23:00:00.000Z', descrizione: 'SPEDIZIONE ACCETTATA PRESSO LA FILIALE', filiale: 'Terni'},
+  ],
 };

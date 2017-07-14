@@ -8,7 +8,9 @@ describe('HistoryParser class', () => {
   describe('getSteps method', () => {
     describe('with valid HTML', () => {
       it('should return steps', (done) => {
-        HistoryParser.getSteps(cheerio.load(testData['289603A257318'].rawBody)).should.eql(testData['289603A257318'].result.steps);
+        HistoryParser.getSteps(cheerio.load(testData['289603A257318'].rawBody)).should.eql(
+          testData['289603A257318'].result.steps
+        );
         done();
       });
     });
@@ -43,7 +45,9 @@ describe('HistoryParser class', () => {
         it('steps should be ordered in descending order by date', (done) => {
           const {steps} = HistoryParser.parse(cheerio.load(testData['289603A257318'].rawBody));
           steps.every((el, index, array) => {
-            return moment(el.data).isSameOrAfter(moment((array[index + 1] || {data: '1970-01-01T00:00:00.000Z'}).data));
+            return moment(el.data).isSameOrAfter(
+              moment((array[index + 1] || {data: '1970-01-01T00:00:00.000Z'}).data)
+            );
           }).should.be.true;
           done();
         });

@@ -37,7 +37,7 @@ export default class Crawler {
       this.codiceSicurezza = $('input[name=codice_sicurezza]').val();
       this.execute2 = $('input[name=execute2]').val();
     } catch (error) {
-      return new HttpError('Error while accessing to the search page', 500);
+      throw new HttpError('Error while accessing to the search page', 500);
     }
   }
 
@@ -48,7 +48,7 @@ export default class Crawler {
     try {
       await rp(this.options);
     } catch (error) {
-      return new HttpError('Error validating session', 500);
+      throw new HttpError('Error validating session', 500);
     }
   }
 
@@ -61,7 +61,7 @@ export default class Crawler {
     try {
       this.rawBody = await rp(this.options);
     } catch (error) {
-      return new HttpError('Error retrieving shipment details', 500);
+      throw new HttpError('Error retrieving shipment details', 500);
     }
   }
 

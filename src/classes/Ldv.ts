@@ -1,4 +1,4 @@
-import { Esito, Step } from './Interfaces';
+import {Esito, Step} from './Interfaces';
 import HttpError from '../classes/HttpError';
 import Crawler from '../classes/Crawler';
 
@@ -9,6 +9,7 @@ export default class Ldv {
   public rawHtml: string;
   public esito: Esito;
   public steps: Step[];
+
   constructor(code: string) {
     if (!Ldv.allowedLengths.includes(code.length)) {
       throw (new HttpError('Wrong LDV format', 503));
@@ -16,20 +17,17 @@ export default class Ldv {
     this.code = code;
 
   }
+
   public async extractData() {
     const crawler = new Crawler(this);
-
-    let err: HttpError;
-    if (err = await crawler.searchLdv()) {
-      throw (err);
+    try {
+      await crawler.searchLdv();
+      await crawler.validateSession();
+      await crawler.getShipmentDetails();
+      this.rawHtml = crawler.rawBody.html();
+      crawler.parse();
+    } catch (err) {
+      throw err;
     }
-    if (err = await crawler.validateSession()) {
-      throw (err);
-    }
-    if (err = await crawler.getShipmentDetails()) {
-      throw (err);
-    }
-    this.rawHtml = crawler.rawBody.html();
-    crawler.parse();
   }
 }

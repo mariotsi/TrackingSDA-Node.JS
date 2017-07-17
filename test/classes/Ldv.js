@@ -74,10 +74,6 @@ describe('Ldv class', () => {
     });
     describe('without error on crawler', () => {
       it('should resolve', (done) => {
-        Crawler.prototype.searchLdv.returns(null);
-        Crawler.prototype.validateSession.returns(null);
-        Crawler.prototype.getShipmentDetails.returns(null);
-        Crawler.prototype.getShipmentDetails.returns(null);
         Crawler.prototype.rawBody = {html: sinon.spy()};
         Crawler.prototype.parse = sinon.spy();
         ldv.extractData().then(done, done);
@@ -85,9 +81,6 @@ describe('Ldv class', () => {
     });
     describe('parser that doesnt add rawBody to crawler', () => {
       it('should warn about html of undefined', (done) => {
-        Crawler.prototype.searchLdv.returns(null);
-        Crawler.prototype.validateSession.returns(null);
-        Crawler.prototype.getShipmentDetails.returns(null);
         Crawler.prototype.rawBody = undefined;
         ldv.extractData().then(done.bind(this, new Error()), (err) => {
           err.message.should.equal('Cannot read property \'html\' of undefined');
@@ -96,34 +89,40 @@ describe('Ldv class', () => {
       });
     });
     describe('failing Crawler.searchLdv', () => {
+      after((done) => {
+        Crawler.prototype.searchLdv.reset();
+        done();
+      });
       it('should throw an error', (done) => {
-        Crawler.prototype.searchLdv.returns('TheError1');
-        Crawler.prototype.validateSession.returns(null);
-        Crawler.prototype.getShipmentDetails.returns(null);
+        Crawler.prototype.searchLdv.throws('TheError1');
         ldv.extractData().then(done.bind(this, new Error()), (err) => {
-          err.should.equal('TheError1');
+          err.name.should.equal('TheError1');
           done();
         });
       });
     });
     describe('failing Crawler.validateSession', () => {
+      after((done) => {
+        Crawler.prototype.validateSession.reset();
+        done();
+      });
       it('should throw an error', (done) => {
-        Crawler.prototype.searchLdv.returns(null);
-        Crawler.prototype.validateSession.returns('TheError2');
-        Crawler.prototype.getShipmentDetails.returns(null);
+        Crawler.prototype.validateSession.throws('TheError2');
         ldv.extractData().then(done.bind(this, new Error()), (err) => {
-          err.should.equal('TheError2');
+          err.name.should.equal('TheError2');
           done();
         });
       });
     });
     describe('failing Crawler.searchLdv', () => {
+      after((done) => {
+        Crawler.prototype.getShipmentDetails.reset();
+        done();
+      });
       it('should throw an error', (done) => {
-        Crawler.prototype.searchLdv.returns(null);
-        Crawler.prototype.validateSession.returns(null);
-        Crawler.prototype.getShipmentDetails.returns('TheError3');
+        Crawler.prototype.getShipmentDetails.throws('TheError3');
         ldv.extractData().then(done.bind(this, new Error()), (err) => {
-          err.should.equal('TheError3');
+          err.name.should.equal('TheError3');
           done();
         });
       });

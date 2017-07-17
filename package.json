@@ -11,7 +11,7 @@
     "copystatic": "copyfiles -u 1 './src/**/*.hbs' './src/**/*.css' out",
     "lint": "tslint -c tslint.json 'src/**/*.ts' --fix",
     "precommit": "tslint -c tslint.json 'src/**/*.ts'",
-    "test:coverage": "istanbul cover ./node_modules/mocha/bin/_mocha ./test/**/*.js --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage && rm -rf ./coverage",
+    "test:coverage": "istanbul cover ./node_modules/mocha/bin/_mocha ./test/**/*.js --report lcovonly -- -R spec && cat ./coverage/lcov.info | codacy-coverage &&  && codecov && rm -rf ./coverage",
     "test": "mocha ./test/**/*.js"
   },
   "engines": {
@@ -47,6 +47,7 @@
     "chai": "^4.1.0",
     "chai-as-promised": "^7.1.1",
     "codacy-coverage": "^2.0.2",
+    "codecov": "^2.2.0",
     "eslint": "^4.2.0",
     "eslint-config-google": "^0.9.1",
     "istanbul": "^0.4.5",

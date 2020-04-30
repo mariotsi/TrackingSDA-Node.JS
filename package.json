@@ -12,7 +12,9 @@
     "lint": "tslint -c tslint.json 'src/**/*.ts' --fix",
     "precommit": "tslint -c tslint.json 'src/**/*.ts'",
     "test:coverage": "istanbul cover ./node_modules/mocha/bin/_mocha ./test/**/*.js --report lcovonly -- -R spec && cat ./coverage/lcov.info | codacy-coverage &&  codecov && rm -rf ./coverage",
-    "test": "mocha ./test/**/*.js"
+    "test": "mocha ./test/**/*.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "engines": {
     "node": "8.x"
@@ -41,7 +43,8 @@
     "request": "^2.84.0",
     "request-promise-native": "^1.0.4",
     "serve-favicon": "^2.4.5",
-    "typescript": "^2.4.1"
+    "typescript": "^2.4.1",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "chai": "^4.1.0",
@@ -56,5 +59,6 @@
     "nodemon": "^1.11.0",
     "sinon": "^2.3.8",
     "tslint-config-airbnb": "^5.2.1"
-  }
+  },
+  "snyk": true
 }

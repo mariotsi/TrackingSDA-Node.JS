@@ -12,7 +12,9 @@
     "lint": "tslint -c tslint.json 'src/**/*.ts' --fix",
     "precommit": "tslint -c tslint.json 'src/**/*.ts'",
     "test:coverage": "istanbul cover ./node_modules/mocha/bin/_mocha ./test/**/*.js --report lcovonly -- -R spec && cat ./coverage/lcov.info | codacy-coverage &&  codecov && rm -rf ./coverage",
-    "test": "mocha ./test/**/*.js"
+    "test": "mocha ./test/**/*.js",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "engines": {
     "node": "8.x"
@@ -28,12 +30,12 @@
     "@types/node": "^8.0.12",
     "@types/request": "0.0.46",
     "@types/request-promise-native": "^1.0.6",
-    "body-parser": "^1.18.2",
+    "body-parser": "^1.19.2",
     "cheerio": "^1.0.0-rc.2",
     "cookie-parser": "^1.4.3",
     "copyfiles": "^1.2.0",
     "debug": "^2.6.9",
-    "express": "^4.16.0",
+    "express": "^4.17.3",
     "hbs": "^4.1.2",
     "moment": "^2.19.3",
     "moment-timezone": "^0.5.13",
@@ -41,7 +43,8 @@
     "request": "^2.84.0",
     "request-promise-native": "^1.0.4",
     "serve-favicon": "^2.4.5",
-    "typescript": "^2.4.1"
+    "typescript": "^2.4.1",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "chai": "^4.1.0",
@@ -56,5 +59,6 @@
     "nodemon": "^1.11.0",
     "sinon": "^2.3.8",
     "tslint-config-airbnb": "^5.2.1"
-  }
+  },
+  "snyk": true
 }

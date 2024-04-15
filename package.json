@@ -39,7 +39,7 @@
     "moment-timezone": "^0.5.13",
     "morgan": "^1.9.0",
     "request": "^2.84.0",
-    "request-promise-native": "^1.0.4",
+    "request-promise-native": "^1.0.9",
     "serve-favicon": "^2.4.5",
     "typescript": "^2.4.1"
   },
